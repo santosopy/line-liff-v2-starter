@@ -8,32 +8,32 @@ document.addEventListener("DOMContentLoaded", function() {
         if (liff.isLoggedIn()) {
             console.log("get line data")
 
-            $.ajax({
-                type : "GET",    
-                url : "http://127.0.0.1:8000/api/plans",    
-                success : function(response){
+            // $.ajax({
+            //     type : "GET",    
+            //     url : "http://127.0.0.1:8000/api/plans",    
+            //     success : function(response){
 
-                    response["data"].forEach(element => {
-                    $(".list-group").append(
-                            `
-                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="text-align:left">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-1">${element.title}</h5>
-                                    <small>${element.created_at}</small>
-                                </div>
-                                <p class="mb-1">${element.description}</p>
-                                <small>${element.price}</small>
-                            </a>
-                            `
-                        )
-                    });
+            //         response["data"].forEach(element => {
+            //         $(".list-group").append(
+            //                 `
+            //                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start" style="text-align:left">
+            //                     <div class="d-flex w-100 justify-content-between">
+            //                         <h5 class="mb-1">${element.title}</h5>
+            //                         <small>${element.created_at}</small>
+            //                     </div>
+            //                     <p class="mb-1">${element.description}</p>
+            //                     <small>${element.price}</small>
+            //                 </a>
+            //                 `
+            //             )
+            //         });
                     
 
-                },
-                error : function(error, textStatus){
-                    console.log(textStatus)
-                }
-            })
+            //     },
+            //     error : function(error, textStatus){
+            //         console.log(textStatus)
+            //     }
+            // })
             
         } else {
             let result = window.confirm("LINE Loginしますか？");
